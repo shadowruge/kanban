@@ -1,7 +1,8 @@
+#By Team Informatica inclusiva:brain:
 # kanban
-simple organise projects<br/>
+Simple organise projects<br/>
 
-[Teste o kanban aqui](https://shadowruge.github.io/kanban/)<br />
+[Teste o kanban aqui](https://shadowruge.github.io/kanban/):sunglasses:<br />
 -- 
 Ajude-nos a melhorar este código, participe!
 <br />
@@ -12,7 +13,8 @@ html, css, js e json.
 2- modelo.
 Html -> para o corpo.
 Css-> organização(disposição).
-JS-> controle de dados e json armazenamento.
+JS-> controle de dados e json armazenamento.<br />
+#Participe!:bowtie:
 
 I come to expose my idea of kanban.
 This product should be easy to use and set up.
@@ -21,4 +23,7 @@ html, css, js and json.
 2- model.
 Html -> to the body.
 CSS-> organization(arrangement).
-JS->Data control and storage json. 
+JS->Data control and storage json.<br />
+#Participate!:bowtie:
+
+

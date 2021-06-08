@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id='Description'>Shadow Kanban</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+    }
+
+    body {
+
+        background-color: green;
+
+    }
+
+    #kanban {
+        width: 97%;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .nav {
+        border: 3px solid black;
+        padding: 20px;
+        color: white;
+        background-color: red;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .ideias,
+    .pesquisa,
+    .progresso,
+    .testes,
+    .pronto {
+        margin-top: 5px;
+        margin-left: auto;
+    }
+
+    .ideias {
+        border: 3px solid black;
+    }
+
+    .pesquisa {
+        border: 3px solid black;
+    }
+
+    .progresso {
+        border: 3px solid black;
+    }
+
+    .testes {
+        border: 3px solid black;
+    }
+
+    .pronto {
+        border: 3px solid black;
+    }
+
+    .membros,
+    .membros-lideres {
+
+        margin-left: 150px;
+
+    }
+
+    .membros {
+        margin-top: 5px;
+        border: 3px solid black;
+    }
+
+    .membros-lideres {
+        margin-top: 5px;
+        border: 3px solid black;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="nav">
+            <p><a href="#">Gestor de projeto</a></p>
+            <p><a href="#">Gestor de equipe</a></p>
+            <p><a href="#">Gestor de pesquisa</a></p>
+        </nav>
+    </header>
+    <div id="kanban">
+        <div class="ideias">Ideias
+            <div class="coluna-ideia">
+                <textarea name="ideias" id="ideias" cols="30" rows="10"></textarea>
+
+            </div>
+        </div>
+        <div class="pesquisa">Pesquisa
+            <div class="coluna-pesquisa">
+                <textarea name="pesquisa" id="pesquisa" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="progresso">Em progresso
+            <div class="coluna-progresso">
+                <textarea name="progresso" id="progresso" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="testes">Testes
+            <div class="coluna-testes">
+                <textarea name="testes" id="testes" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="pronto">Pronto
+            <div class="coluna-pronto">
+                <textarea name="pronto" id="pronto" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="membros">Colaboradores
+            <div class="coluna-pronto">
+                <textarea name="pronto" id="pronto" cols="60" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="membros-lideres">Lideres de equipe
+            <div class="coluna-pronto">
+                <textarea name="pronto" id="pronto" cols="60" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

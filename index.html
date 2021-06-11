@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id='Description'>Shadow Kanban</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-
-    }
-
-    body {
-
-        background-color: green;
-
-    }
-
-    #kanban {
-        width: 97%;
-        color: white;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-
-    }
-
-    .nav {
-        border: 3px solid black;
-        padding: 20px;
-        color: white;
-        background-color: red;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .ideias,
-    .pesquisa,
-    .progresso,
-    .testes,
-    .pronto {
-        margin-top: 5px;
-        margin-left: auto;
-    }
-
-    
-    .membros,
-    .membros-lideres {
-
-        margin-left: 150px;
-
-    }
-
-   
-</style>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="Description">Shadow Kanban</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
     <header>
-        <nav class="nav">
-            <p><a href="#">Gestor de projeto</a></p>
-            <p><a href="#">Gestor de equipe</a></p>
-            <p><a href="#">Gestor de pesquisa</a></p>
-        </nav>
+      <nav class="nav">
+        <p><a href="#">Gestor de projeto</a></p>
+        <p><a href="#">Gestor de equipe</a></p>
+        <p><a href="#">Gestor de pesquisa</a></p>
+      </nav>
     </header>
-    <div id="kanban">
-        <div class="ideias">Ideias
-            <div class="coluna-ideia">
-                <textarea name="ideias" id="ideias" cols="30" rows="10"></textarea>
 
-            </div>
+    <div class="board d-flex">
+      <div #bc1 class="board-column d-flex flex-column">
+        <div class="column-header" onclick="onInputClick(event)">
+          <input
+            type="text"
+            placeholder="Set the name of column..."
+            onkeyup="handleInputKeys(event)"
+            style="width: 100%"
+            onblur="onInputLostFocus(event)"
+            disabled="true"
+          />
+          <p style="display: none">huehuehueu</p>
         </div>
-        <div class="pesquisa">Pesquisa
-            <div class="coluna-pesquisa">
-                <textarea name="pesquisa" id="pesquisa" cols="30" rows="10"></textarea>
-            </div>
+        <div class="column-body">
+          <div
+            #bc1-c1
+            class="card"
+            onclick="onInputClick(event)"
+            onfocusout="onInputLostFocus(event)"
+            draggable="true"
+            ondragstart="dragCardStart(event)"
+          >
+            <textarea
+              name="pronto"
+              id="pronto"
+              cols="30"
+              rows="10"
+              disabled="true"
+            ></textarea>
+          </div>
+          <div class="new-card-button">
+            <button onclick="addNewCard(event)">Add new card</button>
+          </div>
         </div>
-        <div class="progresso">Em progresso
-            <div class="coluna-progresso">
-                <textarea name="progresso" id="progresso" cols="30" rows="10"></textarea>
-            </div>
+      </div>
+      <div #bc1 class="board-column d-flex flex-column">
+        <div class="column-header" onclick="onInputClick(event)">
+          <input
+            type="text"
+            placeholder="Set the name of column..."
+            onkeyup="handleInputKeys(event)"
+            style="width: 100%"
+            onblur="onInputLostFocus(event)"
+            disabled="true"
+          />
+          <p style="display: none">huehuehueu</p>
         </div>
-        <div class="testes">Testes
-            <div class="coluna-testes">
-                <textarea name="testes" id="testes" cols="30" rows="10"></textarea>
-            </div>
+        <div class="column-body">
+          <div class="new-card-button">
+            <button onclick="addNewCard(event)">Add new card</button>
+          </div>
         </div>
-
-        <div class="pronto">Pronto
-            <div class="coluna-pronto">
-                <textarea name="pronto" id="pronto" cols="30" rows="10"></textarea>
-            </div>
-        </div>
-
-        <div class="membros">Colaboradores
-            <div class="coluna-pronto">
-                <textarea name="pronto" id="pronto" cols="60" rows="10"></textarea>
-            </div>
-        </div>
-        <div class="membros-lideres">Lideres de equipe
-            <div class="coluna-pronto">
-                <textarea name="pronto" id="pronto" cols="60" rows="10"></textarea>
-            </div>
-        </div>
+      </div>
     </div>
-    <script>
-    </script>
-</body>
 
+    <!-- <p
+      id="target"
+      style="background-color: coral"
+      ondrop="dropHandler(event)"
+      ondragover="dragOvertHandler(event)"
+    >
+      Drop Zone
+    </p>
+    <p
+      id="p1"
+      draggable="true"
+      ondragstart="dragStartHandler(event)"
+      style="background-color: blueviolet"
+    >
+      This element is draggable.
+    </p>
+    <p
+      id="target"
+      style="background-color: crimson"
+      ondrop="dropHandler(event)"
+      ondragover="dragOvertHandler(event)"
+    >
+      Drop Zone
+    </p>
+    <hr />
+    <p id="p2" draggable="true" ondragstart="dragStartHandler(event)">
+      This element is draggable.
+    </p>
+    <div
+      id="target"
+      ondrop="dropHandler(event)"
+      ondragover="dragOvertHandler(event)"
+    >
+      Drop Zone
+    </div> -->
+  </body>
 </html>

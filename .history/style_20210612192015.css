@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header{
+  background-color
+}
+
+body{
+  background-color:blue;
+}
+
+#kanban {
+  
+  width: 97%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav {
+ 
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ideias,
+.pesquisa,
+.progresso,
+.testes,
+.pronto {
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.membros,
+.membros-lideres {
+  margin-left: 150px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.board {
+  padding: 20px;
+}
+
+.board-column {
+  margin-left: 20px;
+}
+
+.column-body {
+  margin-top: 2em;
+}
+
+.card textarea {
+  resize: none;
+}
+
+.sticker {
+  width: 180px;
+  height: 180px;
+  }
+
+  button {
+  margin-top: 10px;
+  margin-left: 10px;  
+  }

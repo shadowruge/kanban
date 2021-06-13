@@ -1,0 +1,35 @@
+/* setando html */
+* {
+  
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+}
+
+/* nav confi fora da tag body */
+
+.nav {
+
+  background-color:aquamarine;
+  padding: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+  button {
+
+    bootstrap:warning;
+    color: white;
+    background-color: brown;
+    margin-top: 30px;
+    margin-left: 10px; 
+
+  }
+    
+  .textarea{
+    border:dotted;
+    border-color: brown;
+  }

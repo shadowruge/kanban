@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header{
+  background-color:white;
+}
+
+.body {
+  font-size: 15px;
+}
+
+
+.card {
+  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 5;
+  height: 4em;
+  width: 64em;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  display: table-cell;
+  vertical-align: middle;
+  letter-spacing: -2px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.bg-gold {
+  background: -webkit-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: -o-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: -moz-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
+
+
+#kanban {
+  
+  width: 97%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav {
+ 
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ideias,
+.pesquisa,
+.progresso,
+.testes,
+.pronto {
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.membros,
+.membros-lideres {
+  margin-left: 150px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.board {
+  padding: 20px;
+}
+
+.board-column {
+  margin-left: 20px;
+}
+
+.column-body {
+  margin-top: 2em;
+}
+
+.card textarea {
+  resize: none;
+}
+
+.sticker {
+  width: 180px;
+  height: 180px;
+  }
+
+  button {
+  margin-top: 10px;
+  margin-left: 10px;  
+  }
+
+
+    

@@ -1,143 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Shadow Kanban</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
 
-body {
-  padding: 10px;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(231, 220, 220);
-}
+    body {
+      padding: 10px;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(231, 220, 220);
+    }
 
-header {
-  box-shadow: 0px 5px 20px #888;
-  background-color: rgb(199, 177, 165);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  flex-wrap: wrap;
-}
+    header {
+      box-shadow: 0px 5px 20px #888;
+      background-color: rgb(199, 177, 165);
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
 
-.logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background-color:white;
-}
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: white;
+    }
 
-.menu-ul {
-  flex-wrap: wrap;
-  list-style: none;
-  display: flex;
-}
+    .menu-ul {
+      flex-wrap: wrap;
+      list-style: none;
+      display: flex;
+    }
 
-.menu-ul li a {
-  color: black;
-  display: block;
-  text-decoration: none;
-  margin-left: 10px;
-  padding: 10px 20px 10px 20px;
-  border-radius: 20px;
-}
+    .menu-ul li a {
+      color: black;
+      display: block;
+      text-decoration: none;
+      margin-left: 10px;
+      padding: 10px 20px 10px 20px;
+      border-radius: 20px;
+    }
 
-.menu-ul li a:hover {
-  color: rgba(8, 8, 8, 0.241);
-  display: block;
-  text-decoration: none;
-  margin-left: 10px;
-  background-color: rgba(228, 141, 141, 0.097);
-}
+    .menu-ul li a:hover {
+      color: rgba(8, 8, 8, 0.241);
+      display: block;
+      text-decoration: none;
+      margin-left: 10px;
+      background-color: rgba(228, 141, 141, 0.097);
+    }
 
-input{
-    box-shadow: 0px 5px 20px #888;
-    margin-top: 10px;
-    margin-left: 10px;
-}
+    input {
+      border-radius: 20px;
+      box-shadow: 0px 5px 20px #888;
+      text-align: center;
+      width: 200px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
 
-#fix_kanban {
-  display: flex;
+    #fix_kanban {
+      display: flex;
+      flex-wrap: wrap;
+    }
+#item{
+  margin-top: 30px;
 }
+    .titulo {
+     
+      text-align: center;     
+    }
 
-.titulo {
-  text-align: center;
-}
-
-textarea {
-    box-shadow: 0px 5px 20px #888;
-  margin-left: 10px;
-}
-
-</style>
-<body>
-    <header>
-        <div class="logo">Logotipo</div>
-        <ul class="menu-ul">
-          <li><a href="/">Cordenador de pesquiza</a></li>
-          <li><a href="/">Cordenador de equipe</a></li>
-          <li><a href="/">Cordenador geral</a></li>
-        </ul>
-      </header>
-    <input type="text" id="newItem" placeholder="Add new kanban">
    
-   <div class="kanban_fix" id="fix_kanban"></div>
-    
-   <script>
-      
-/*cria o banco vasio*/
-    let banco = []
-    /*cria o novo item*/
-       const criarItem = (tarefa) =>{
-            const item = document.createElement('p');
-            item.classList.add('kanban_new');
-            item.innerHTML =`
+
+    textarea {
+      box-shadow: 0px 5px 20px #888;
+      margin-left: 10px;
+    }
+
+  </style>
+  <body>
+    <header>
+      <div class="logo">Logotipo</div>
+      <ul class="menu-ul">
+        <li><a href="/">Cordenador de pesquiza</a></li>
+        <li><a href="/">Cordenador de equipe</a></li>
+        <li><a href="/">Cordenador geral</a></li>
+      </ul>
+    </header>
+    <input type="text" id="newItem" placeholder="Add new kanban" />
+
+    <div class="kanban_fix" id="fix_kanban"></div>
+
+
+    <script>
+      /*cria o banco vasio*/
+      let banco = [];
+      /*cria o novo item*/
+      const criarItem = (tarefa) => {
+        const item = document.createElement("p");
+        item.classList.add("kanban_new");
+        item.innerHTML = `
+        <div id="item">  
             <div class="titulo">
-            <div>${tarefa}</div>
-            </div>
-            <textarea id="texta" cols="30" rows="10"></textarea>
-        `
-        document.getElementById('fix_kanban').appendChild(item);
-       }
-/*limpa a tarefa*/
-       const limparTarefas = () => {
-           const fix_kanban = document.getElementById('fix_kanban');
-           while (fix_kanban.firstChild){
-            fix_kanban.removeChild(fix_kanban.lastChild);
-           }
-       }
-       /*atualisa o Dom*/
-       const atualizarTela = () => {
-           limparTarefas();
-          banco.forEach(item => criarItem(item.tarefa));
-       }
-       
-       /*item a ser incerido*/
-       const inserirItem = (evento) =>{
+            ${tarefa}
+          </div>
+          <textarea id="texta" cols="30" rows="10"></textarea>
+          </div>
+        `;
+        document.getElementById("fix_kanban").appendChild(item);
+      };
+      /*limpa a tarefa*/
+      const limparTarefas = () => {
+        const fix_kanban = document.getElementById("fix_kanban");
+        while (fix_kanban.firstChild) {
+          fix_kanban.removeChild(fix_kanban.lastChild);
+        }
+      };
+      /*atualisa o Dom*/
+      const atualizarTela = () => {
+        limparTarefas();
+        banco.forEach((item) => criarItem(item.tarefa));
+      };
 
-           const tecla = evento.key;
-           const texto = evento.target.value;
-           /*console.log(tecla);*/
-           if (tecla === 'Enter'){
-               banco.push({'tarefa': texto});
-           }
-           atualizarTela();
-       }
+      /*item a ser incerido*/
+      const inserirItem = (evento) => {
+        const tecla = evento.key;
+        const texto = evento.target.value;
+        /*console.log(tecla);*/
+        if (tecla === "Enter") {
+          banco.push({ tarefa: texto });
+        }
+        atualizarTela();
+      };
 
-       document.getElementById('newItem').addEventListener('keypress', inserirItem);
-       atualizarTela();
-   </script> 
-</body>
+      document
+        .getElementById("newItem")
+        .addEventListener("keypress", inserirItem);
+      atualizarTela();
+    </script>
+  </body>
 </html>

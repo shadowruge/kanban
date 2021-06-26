@@ -1,1 +1,0 @@
-let bt = document.createElement('text')

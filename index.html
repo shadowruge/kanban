@@ -197,6 +197,37 @@
             </div>
             <textarea id="texta" cols="30" rows="10"></textarea>
          
+
+  </style>
+  <body>
+    <header>
+      <div class="logo">Logotipo</div>
+      <ul class="menu-ul">
+        <li><a href="/">Cordenador de pesquisa</a></li>
+        <li><a href="/">Cordenador de equipe</a></li>
+        <li><a href="/">Cordenador geral</a></li>
+      </ul>
+    </header>
+    <input type="text" id="newItem" placeholder="Add new kanban" />
+
+    <div class="kanban_fix" id="fix_kanban"></div>
+
+
+    <script>
+      /*cria o banco vasio*/
+      let banco = [];
+      /*cria o novo item*/
+      const criarItem = (tarefa) => {
+        const item = document.createElement("p");
+        item.classList.add("kanban_new");
+        item.innerHTML = `
+        <div id="item">  
+            <div class="titulo">
+            ${tarefa}
+          </div>
+          <textarea id="texta" cols="30" rows="10"></textarea>
+          </div>
+
         `;
       document.getElementById("fix_kanban").appendChild(item);
     };

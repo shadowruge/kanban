@@ -2,311 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Shadow Kanban</title>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
 </head>
-<style>
-  * {
-    
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
- 
-  }
-
-  body {
-    
-    padding: 10px;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(231, 220, 220);
-  
-  }
-
-  header {
-   
-    box-shadow: 0px 5px 20px #888;
-    background-color: rgb(199, 177, 165);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
-  
-  }
-
-  .logo {
-  
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: white;
-  
-  }
-
-  input {
-
-    border-radius: 20px;
-    box-shadow: 0px 5px 20px #888;
-    text-align: center;
-    height: 30px;
-    margin-top: 10px;
-
-  }
-
-  #chec  {
-  
-    margin-left: 10px;
-    padding: 10px 10px 10px 10px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    display: flex;
-     
-  
-  }
-
-
-  #fix_kanban {
-  
-    display: flex;
-    flex-wrap: wrap;
-  
-  }
-
-  #item {
-  
-    margin-top: 30px;
-  
-  }
-
-  .titulo {
-
-    text-align: center;
-  
-  }
-
-
-
-  textarea {
-  
-   
-    margin-left: 10px;
-  
-  }
-
-  .sidenav {
-  
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(231, 220, 220);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  
-  }
-
-  .sidenav a {
-  
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  
-  }
-
-  .sidenav a:hover {
-  
-    color: #f1f1f1;
-  
-  }
-
-  .sidenav .closebtn {
-  
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 16px;
-    margin-left: 50px;
-  
-  }
-
-  @media screen and (max-height: 450px) {
-  
-    .sidenav {
-  
-      padding-top: 15px;
-  
-    }
-
-    .sidenav a {
-  
-      font-size: 16px;
-  
-    }
-  }
-</style>
 
 <body>
   <header>
-    <div class="logo">Logotipo</div>
+    <div class="logo">
+      <img src="/assets/javascript-shield-logo.png" alt="" srcset="">
+    </div>
 
   </header>
   <!--barra lateral-->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Cordenador de pesquisa</a>
-    <a href="#">Cordenador de equipe</a>
-    <a href="#">Cordenador geral</a>
-    <a href="#">About</a>
+    <a href="mailto:">Cordenador de pesquisa</a>
+    <a href="mailto:">Cordenador de equipe</a>
+    <a href="mailto:">Cordenador geral</a>
+    <a href="About.html">About</a>
   </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-  <input type="text" id="newItem" placeholder="Add new kanban" />
+
+
+  <div id="container">
+
+    <label>Note</label><br />
+    <textarea type="text" id="newItem" placeholder="Add new kanban"></textarea><br />
+
+  </div>
 
   <div class="kanban_fix" id="fix_kanban"></div>
-
-
-  <script>
-    'use strict';
-    /*cria o banco vasio*/
-    /*let banco = [];*/
-
-    const getBanco =()=> JSON.parse(localStorage.getItem('kanban_new')) ?? [];
-    const setBanco = (banco) => localStorage.setItem('kanban_new', JSON.stringify(banco));
-    
-    /*cria o novo item*/
-    const criarItem = (tarefa, status, indice) => {
-      const item = document.createElement("div");
-      item.classList.add("kanban_new");
-      item.innerHTML = `
-            <div id="chec">       
-             
-              <input type="checkbox" ${status} data-indice=${indice}>
-              ${tarefa}
-              <input type="button" value="X"  data-indice=${indice}>
-                         
-            </div>
-            <textarea id="texta" cols="30" rows="10"></textarea>
-         
-
-  </style>
-  <body>
-    <header>
-      <div class="logo">Logotipo</div>
-      <ul class="menu-ul">
-        <li><a href="/">Cordenador de pesquisa</a></li>
-        <li><a href="/">Cordenador de equipe</a></li>
-        <li><a href="/">Cordenador geral</a></li>
-      </ul>
-    </header>
-    <input type="text" id="newItem" placeholder="Add new kanban" />
-
-    <div class="kanban_fix" id="fix_kanban"></div>
-
-
-    <script>
-      /*cria o banco vasio*/
-      let banco = [];
-      /*cria o novo item*/
-      const criarItem = (tarefa) => {
-        const item = document.createElement("p");
-        item.classList.add("kanban_new");
-        item.innerHTML = `
-        <div id="item">  
-            <div class="titulo">
-            ${tarefa}
-          </div>
-          <textarea id="texta" cols="30" rows="10"></textarea>
-          </div>
-
-        `;
-      document.getElementById("fix_kanban").appendChild(item);
-    };
-
-    /*limpa a tarefa*/
-    const limparTarefas = () => {
-      const fix_kanban = document.getElementById("fix_kanban");
-      while (fix_kanban.firstChild) {
-        fix_kanban.removeChild(fix_kanban.lastChild);
-      }
-    };
-
-    /*atualisa o Dom*/
-    const atualizarTela = () => {
-      limparTarefas();
-      const banco = getBanco();
-      banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
-    };
-
-    /*item a ser incerido*/
-    const inserirItem = (evento) => {
-      const tecla = evento.key;
-      const texto = evento.target.value;
-      /*console.log(tecla);*/
-      if (tecla === "Enter") {
-        const banco = getBanco();
-        banco.push({
-          'tarefa': texto, 'status':''
-        });
-        setBanco(banco);
-        atualizarTela();
-        evento.target.value = '';
-      }
-      
-    };
-
-const removerItem = (indice)=>{
-  const banco = getBanco();
-  banco.splice(indice, 1);
-  setBanco(banco);
-  atualizarTela();
-}
-
-const atualizarItem =(indice)=>{
-  const banco = getBanco();
-  banco[indice].status =  banco[indice].status === '' ? 'checked' : '';
-  setBanco(banco);
-  atualizarTela();
-}
-    const clickItem = (evento) =>{
-      const elemento = evento.target;
-      if(elemento.type === 'button'){
-        const indice = elemento.dataset.indice;
-        removerItem(indice);
-      }else if(elemento.type === 'checkbox'){
-        const indice = elemento.dataset.indice;
-        atualizarItem(indice);
-      }
-    }
-
-    document
-      .getElementById("newItem")
-      .addEventListener("keypress", inserirItem);
-      
-      document
-      .getElementById("fix_kanban")
-      .addEventListener("click", clickItem);
-      
-
-    atualizarTela();
-
-    const openNav =() => {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    const closeNav=()=> {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
+  <script src="/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,163 @@
+* {
+
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+}
+
+body {
+
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(247, 246, 239);
+
+}
+
+
+.logo {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+header {
+
+    box-shadow: 0px 5px 20px rgb(167, 201, 245);
+    background-color: rgb(14, 28, 224);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+
+}
+
+#inputx {
+    text-align: justify;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(122, 120, 120);
+    text-align: center;
+
+}
+
+#fix_kanban {
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#item {
+
+    margin-top: 30px;
+
+}
+
+.titulo {
+
+    text-align: center;
+
+}
+
+.nota {
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 10px;
+    background-color: gold;
+    width: 250px;
+    max-width: 300px;
+}
+
+textarea {
+    margin-left: 10px;
+
+}
+
+label span{
+    color: blue;
+}
+
+label input:checked + span{
+
+    color: red;
+
+}
+
+.sidenav {
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(14, 28, 224);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+.sidenav a {
+
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenav a:hover {
+
+    color: #f1f1f1;
+
+}
+
+.sidenav .closebtn {
+
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 16px;
+    margin-left: 50px;
+
+}
+
+@media screen and (max-height: 450px) {
+
+    .sidenav {
+
+        padding-top: 15px;
+
+    }
+
+    .sidenav a {
+
+        font-size: 16px;
+
+    }
+
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
